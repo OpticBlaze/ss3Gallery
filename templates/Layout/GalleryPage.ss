@@ -16,9 +16,13 @@
         <% control getGalleryImages %>
             <li class="$EvenOdd $FirstLast IGE{$Pos} galentries">
             <a href="$Image.URL" rel="prettyPhoto[gallery1]" title="$Description">
+            
             <% control Image.SetWidth(280) %>
-            <img src="$Link"  alt="$Title" />
-            <% end_control %></a></li>
+            <img src="$Link"  
+            <% end_control %>
+            alt="$Title" />
+            
+            </a></li>
         <% end_control %>
     </ul>
     

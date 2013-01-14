@@ -4,11 +4,11 @@ class GalleryPage extends Page {
 	
 
 	public static $db = array(
+	'GalFolder' => 'Varchar(100)'
 	);
 	
 	// Used to automatically include photos in a specific folder
 	static $has_one = array(
-		"AutoFolder" => "Folder"
 	);
 	
 	// One gallery page has many gallery images
@@ -28,11 +28,15 @@ class GalleryPage extends Page {
 			$gridFieldConfig->addComponent(new GridFieldBulkImageUpload());
 			$gridFieldConfig->addComponent(new GridFieldBulkManager());
 			
+		
+			// Creates field where you can type in the folder name --- IT WILL CREATE IN ROOT OF ASSET DIRECTORY!!!
+			$fields->addFieldToTab("Root.ImageGallery", new TextField('GalFolder','Folder name')
+			);
+				
 			// Used to determine upload folder
-			if($this->AutoFolderID) {
-			// Specify the upload folder -- this uses the drop down field that is created below to get folder name
-			$uploadfolder = DataObject::get_by_id("Folder", $this->AutoFolderID);
-			$uploadfoldername = $uploadfolder->Name;
+			if($this->GalFolder!='' || $this->GalFolder!=NULL) {
+			// Specify the upload folder 
+			$uploadfoldername = $this->GalFolder;
 			$gridFieldConfig->getComponentByType('GridFieldBulkImageUpload')->setConfig('folderName', $uploadfoldername);
 			}
 			else {
@@ -45,11 +49,7 @@ class GalleryPage extends Page {
 			$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder')); 
 			$gridFieldConfig->removeComponentsByType('GridFieldAddNewButton'); // We only use bulk upload button
 			
-						
-			// Creates drop down menu so that you can select the folder that you want included
-			$fields->addFieldToTab("Root.ImageGallery", new TreeDropdownField("AutoFolderID","Existing folder where you want images uploaded","Folder"));
-			
-
+		
 			// Creates sortable grid field
 			$gridfield = new GridField("GalleryImages", "Image Gallery", $this->GalleryImages()->sort("SortOrder"), $gridFieldConfig);
 			$fields->addFieldToTab('Root.ImageGallery', $gridfield);
@@ -57,8 +57,13 @@ class GalleryPage extends Page {
 		return $fields;
 		
 	}
+		// Check that folder name conforms to assets class standards. remove spaces and special charachters if used
+		function onBeforeWrite() {
+			$this->GalFolder = str_replace(array(' ','-'),'-', preg_replace('/\.[^.]+$/', '-', $this->GalFolder));
+	
+		parent::onBeforeWrite();
+		}
 		
-
 }
 
 
