@@ -1,0 +1,28 @@
+/* Custom Pretty Photo Styles for things like text etc */
+
+
+/* Sets the font for the pretty photo pop up */
+
+div.ppt { font-family:'Font2'; font-size:1em;}
+.pp_description { font-family:'Font2'; font-size:1.2em; font-style:normal;}
+
+/* Controls how list items are displayed */
+
+#ImageGalleryEntries {
+	margin-top:20px;	
+}
+
+#ImageGalleryEntries ul li {
+	list-style:none;
+	padding:5px;
+	float:left;
+	background:#CCC;
+	display:block;
+	width:100px; /* this value is determined by Image.SetWidth in galleryPages.ss */
+	height:100px;
+	margin-top:20px;
+	overflow:hidden;
+	}
+#ImageGalleryEntries ul li:hover { background:white;}	
+	
+#ImageGalleryEntries ul li img { height:100px; width:100px;overflow:hidden;}
