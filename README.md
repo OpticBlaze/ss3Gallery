@@ -1,4 +1,4 @@
-GridField Bulk Editing Tools
+Silverstripe 3 Photo Gallery
 ============================
 https://github.com/OpticBlaze/ss3Gallery
 
