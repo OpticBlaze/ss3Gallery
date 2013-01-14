@@ -8,9 +8,11 @@ It has the following functionality:
 
 - Create multiple galleries
 - Bulk uploading
-- Bluk Editing
+- Bulk Editing
 - Images can have custom image title as well as description
 - Gallery displays with Pretty Photo
+	- This includes displaying title tag and description in gallery view
+	- Pretty photo has sharing buttons for facebook and twitter
 - Create upload folder directly in gallery
 
 ## Requirments
