@@ -10,7 +10,7 @@ It has the following functionality:
 - Bulk uploading
 - Bulk Editing
 - Images can have custom image title as well as description
-- Gallery displays with Pretty Photo
+- Gallery displays with Pretty Photo http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
 	- This includes displaying title tag and description in gallery view
 	- Pretty photo has sharing buttons for facebook and twitter
 - Create upload folder directly in gallery
