@@ -35,4 +35,4 @@ It has the following functionality:
 
 ### Known issues
 - Any folder created will be in the root of the assets folder. At this momement the gallery does not support nested folders
-- The description field is set to a max of 280 charachters. Prettyphoto tennds to crash if there are more charachters
+- The description field is set to a max of 280 charachters. Prettyphoto tends to crash if there are more charachters
