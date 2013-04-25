@@ -13,17 +13,17 @@
 	<p> $AlbumDescription </p>
 
     <ul>
-        <% control getGalleryImages %>
+        <% loop getGalleryImages %>
             <li class="$EvenOdd $FirstLast IGE{$Pos} galentries">
             <a href="$Image.URL" rel="prettyPhoto[gallery1]" title="$Description">
             
-            <% control Image.SetWidth(280) %>
+            <% loop Image.SetWidth(280) %>
             <img src="$Link"  
-            <% end_control %>
+            <% end_loop %>
             alt="$Title" />
             
             </a></li>
-        <% end_control %>
+        <% end_loop %>
     </ul>
     
 </div>
