@@ -1,14 +1,3 @@
-<div class="typography">
-
-<% if Menu(2) %>
-    <% include SideBar %>
-    <div id="Content" class="grid_9 omega">        
-    <% end_if %>
-        
-    <h2>$Title</h2>
-    $Content
-    $Form
-         
 <div id="ImageGalleryEntries">
 	<p> $AlbumDescription </p>
 
@@ -25,11 +14,3 @@
             </a></li>
         <% end_loop %>
     </ul>
-    
-</div>
-	<% if Menu(2) %>
-		</div>
-		<div class="clear"> </div>
-	<% end_if %>
-</div>
-   

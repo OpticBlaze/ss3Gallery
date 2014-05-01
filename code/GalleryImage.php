@@ -13,6 +13,11 @@ class GalleryImage extends DataObject {
     'Image' => 'Image',
     'GalleryPage' => 'GalleryPage',
   );
+  
+	//Permissions
+	function canView($Member = null){if(permission::check('VIEW_GALLERY')){return true;}else{return false;}}
+	function canEdit($Member = null){if(permission::check('EDIT_GALLERY')){return true;}else{return false;}}
+	function canCreate($Member = null){if(permission::check('EDIT_GALLERY')){return true;}else{return false;}} 
  
  // Add fields to dataobject
   public function getCMSFields() { 
@@ -53,6 +58,6 @@ class GalleryImage extends DataObject {
    public function getThumbnail() { 
      return $this->Image()->CMSThumbnail();
   }
- 
+  
 }
 
