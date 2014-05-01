@@ -16,6 +16,7 @@ class GalleryPage extends Page {
     'GalleryImages' => 'GalleryImage'
   	);
 	
+	// Add CMS description	
 	static $description = "Add a Photo Gallery to the site";
 	static $singular_name = 'Photo Gallery';
 	
@@ -101,18 +102,16 @@ class GalleryPage_Controller extends Page_Controller implements PermissionProvid
 		}
 		
 		 
-		//Add permissin check boxes to CMS
+		//Add permission check boxes to CMS
 		public function providePermissions() {
 		return array(
 		  "VIEW_GALLERY" => "View Gallery Pages",
 		  "EDIT_GALLERY" => "Edit Gallery Pages",
 		);
 		}
-	
-	public function GetGalleryImages() {
+		
+		// Set sort order for images
+		public function GetGalleryImages() {
 		return $this->GalleryImages()->sort("SortOrder");
-	}
-			 
-	 
-
+		}
 }
