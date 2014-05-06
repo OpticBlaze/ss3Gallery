@@ -1,3 +1,4 @@
+<% if getGalleryImages %>
 <div id="ImageGalleryEntries">
 	<p> $AlbumDescription </p>
 
@@ -14,3 +15,5 @@
             </a></li>
         <% end_loop %>
     </ul>
+ </div>
+<% end_if %>
