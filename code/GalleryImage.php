@@ -16,7 +16,6 @@ class GalleryImage extends DataObject {
   );
   
 	//Permissions
-	function canView($Member = null){if(permission::check('VIEW_GALLERY')){return true;}else{return false;}}
 	function canEdit($Member = null){if(permission::check('EDIT_GALLERY')){return true;}else{return false;}}
 	function canCreate($Member = null){if(permission::check('EDIT_GALLERY')){return true;}else{return false;}} 
  

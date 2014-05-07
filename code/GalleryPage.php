@@ -22,7 +22,6 @@ class GalleryPage extends Page {
 	
 	
 	// Set Permissions
-	function canView($Member = null){if(permission::check('VIEW_GALLERY')){return true;}else{return false;}}
 	function canEdit($Member = null){if(permission::check('EDIT_GALLERY')){return true;}else{return false;}}
 	function canCreate($Member = null){if(permission::check('EDIT_GALLERY')){return true;}else{return false;}}
 
