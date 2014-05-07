@@ -37,7 +37,7 @@ It has the following functionality:
 - Enter the folder name to which you want to upload the images
   The system will create a new folder in the root of the assets folder
 - Make sure you save the page before you use the bulk upload tools. If you dont they the image will upload to a default gallery
-- If the user is not an admin and you want him to be able to use the gallery then make sure to enable the view and edit permissions for the user's group permissions under security tab.
+- If the user is not an admin and you want him to be able to use the gallery then make sure to enable the edit permissions for the user's group permissions under security tab.
 
 
 ### Known issues
