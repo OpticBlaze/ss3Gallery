@@ -31,7 +31,7 @@ class GalleryPage extends Page {
    		$fields = parent::getCMSFields();
 		
 			$gridFieldConfig = GridFieldConfig_RecordEditor::create(); 
-			$gridFieldConfig->addComponent(new GridFieldBulkImageUpload());
+			$gridFieldConfig->addComponent(new GridFieldBulkUpload());
 			$gridFieldConfig->addComponent(new GridFieldBulkManager());
 			
 		
@@ -43,10 +43,10 @@ class GalleryPage extends Page {
 			if($this->GalFolder!='' || $this->GalFolder!=NULL) {
 			// Specify the upload folder 
 			$uploadfoldername = $this->GalFolder;
-			$gridFieldConfig->getComponentByType('GridFieldBulkImageUpload')->setConfig('folderName', $uploadfoldername);
+			$gridFieldConfig->getComponentByType('GridFieldBulkUpload')->setConfig('folderName', $uploadfoldername);
 			}
 			else {
-			$gridFieldConfig->getComponentByType('GridFieldBulkImageUpload')->setConfig('folderName', 'Gallery-Images');	
+			$gridFieldConfig->getComponentByType('GridFieldBulkUpload')->setConfig('folderName', 'Gallery-Images');	
 			}
 			
 			// Customise gridfield
